@@ -1,18 +1,18 @@
 package com.cylon;
 import java.text.DecimalFormat;
 public class Calculadora{
-     double n1;
-     double n2;
-     double in2;
-     double in1;
-     double modulon1;
-     double modulon2;
-     double sangulo1;
-     double sangulo2;
-     double multangulo;
-     String sinal="";
-     double modulo;
-     double angulo;
+    double n1;
+    double n2;
+    double in2;
+    double in1;
+    double modulon1;
+    double modulon2;
+    double sangulo1;
+    double sangulo2;
+    double multangulo;
+    String sinal="";
+    double modulo;
+    double angulo;
      
     public Calculadora(NumeroComplexo n1, NumeroComplexo n2) {
         this.n1 = n1.getReal();

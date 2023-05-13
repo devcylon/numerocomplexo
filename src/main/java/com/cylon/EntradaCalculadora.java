@@ -1,8 +1,6 @@
 package com.cylon;
 import java.util.Scanner;
 public class EntradaCalculadora {
-    public static final String Calculador = null;
-
     public Calculadora Calculador() {
         Scanner texto = new Scanner(System.in);
         System.out.println("------Formar do 1º número complexo------\nDigite:");

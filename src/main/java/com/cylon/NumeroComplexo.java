@@ -1,7 +1,5 @@
 package com.cylon;
-
 import java.text.DecimalFormat;
-
 public class NumeroComplexo {
     int nu;
     double modulo;
@@ -93,9 +91,5 @@ public class NumeroComplexo {
         String resultado = "Polar:      "+new DecimalFormat("#,##0.00").format(modulo)+ " /_ "+new DecimalFormat("#,##0.00").format(angulo)+"°\n";
         resultado +="Retangular: "+ new DecimalFormat("#,##0.00").format(real)+" " + sinal + new DecimalFormat("#,##0.00").format(imaginario) + "i\n";
         return resultado;
-
-        
-    
-        
     }
 }
