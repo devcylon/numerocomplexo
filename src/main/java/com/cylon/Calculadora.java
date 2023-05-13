@@ -1,50 +1,100 @@
 package com.cylon;
-import java.util.Scanner;
-public class Calculadora {
-    public static final String Calculador = null;
+import java.text.DecimalFormat;
+public class Calculadora{
+     double n1;
+     double n2;
+     double in2;
+     double in1;
+     double modulon1;
+     double modulon2;
+     double sangulo1;
+     double sangulo2;
+     double multangulo;
+     String sinal="";
+     double modulo;
+     double angulo;
+     
+    public Calculadora(NumeroComplexo n1, NumeroComplexo n2) {
+        this.n1 = n1.getReal();
+        this.n2 = n2.getReal();
+        this.in1 = n1.getImaginario();
+        this.in2 = n2.getImaginario();
+        this.modulon1 = n1.getNumero();
+        this.modulon2 = n2.getNumero();
+        this.sangulo1 = n1.getAngulo();
+        this.sangulo2 = n2.getAngulo();
 
-    public SomaComplexo Calculador() {
-        Scanner texto = new Scanner(System.in);
-        System.out.println("------Formar do 1º número complexo------\nDigite:");
-        System.out.println("1 - para número em polar ");
-        System.out.println("2 - para número em retangular");
-        String nx = texto.next();
-        int nxx = Integer.parseInt(nx);
-        String messagem;
-        String messagem2;
-        if(nxx == 1){
-            messagem= "Digite o modulo";
-            messagem2 = " Digite o ângulo";
-        }else{
-            messagem= "Digite a parte real";
-            messagem2 = "Digite a parte imaginária";
         }
-        System.out.println(messagem);
-        int n1 = Integer.parseInt(texto.next());
-        System.out.println(messagem2);
-        int n2 = Integer.parseInt(texto.next());
-        ConverterPolarParaRetangula n = new ConverterPolarParaRetangula(nxx,n1, n2);
-        System.out.println("------Formar do 2º número complexo------\nDigite:");
-        System.out.println("1 - para número em polar");
-        System.out.println("2 - para número em retangular");
-        String nx2 = texto.next();
-        int nxx2 = Integer.parseInt(nx2);
-        if(nxx2 == 1){
-            messagem= "Digite o modulo";
-            messagem2 = " Digite o ângulo";
-        }else{
-            messagem= "Digite a parte real";
-            messagem2 = "Digite a parte imaginária";
+    public double getN1() {
+        return n1;
+    }
+    public void setN1(double n1) {
+        this.n1 = n1;
+    }
+    public double getN2() {
+        return n2;
+    }
+    public void setN2(double n2) {
+        this.n2 = n2;
+    }
+     
+    public String somar(){
+        double somaR = n1 + n2;
+        double somaI = in1 + in2;
+        if(somaI > 0){
+            sinal ="+";
         }
-        System.out.println(messagem);
-        int nn1 = Integer.parseInt(texto.next());
-        System.out.println(messagem2);
-        int nn2 = Integer.parseInt(texto.next());
+        modulo = Math.sqrt(Math.pow(somaR, 2)+Math.pow(somaI, 2));
+        angulo = Math.toDegrees(Math.acos(somaR/modulo));
+        String ret = "-----------Resuldato da adição-----------\n";
+        ret += "Resultado em Polar: "+new DecimalFormat("#,##0.000").format(modulo)+" /_ "+new DecimalFormat("#,##0.00").format(angulo)+"°\n";
+        ret +="Resultado em retangular: " + new DecimalFormat("#,##0.000").format(somaR) + sinal + new DecimalFormat("#,##0.000").format(somaI)+"i";
+        ret += "\n----------------------------------------";
+        return ret;
+    }
+    public String subtrair(){
+        double somaR = n1 - n2;
+        double somaI = in1 - in2;
+        if(somaI > 0){
+            sinal ="+";
+        }
+        modulo = Math.sqrt(Math.pow(somaR, 2)+Math.pow(somaI, 2));
+        angulo = Math.toDegrees(Math.acos(somaR/modulo));
+        String ret = "\n----------Resultado da subtração--------\n";
+        ret += "em Polar: "+new DecimalFormat("#,##0.000").format(modulo)+" /_ "+new DecimalFormat("#,##0.00").format(angulo)+"°\n";
+        ret += "em retangular: "+new DecimalFormat("#,##0.000").format(somaR) + sinal + new DecimalFormat("#,##0.000").format(somaI)+"i";
+        ret += "\n----------------------------------------";
+        return ret;
+    }
+    public String multiplicar(){
+        double  multModulo= modulon1 * modulon2;
+        double multangulo =  sangulo1 + sangulo2;
+        double multReal = multModulo* Math.cos(Math.toRadians(multangulo));
+        double multImaginario = multModulo* Math.sin(Math.toRadians(multangulo));
+        System.out.println(multangulo);
+        if(multImaginario > 0){
+            sinal ="+";
+        }
+        String ret = "\n----------Resultado da multiplicação--------\n";
+        ret += "em Polar: "+new DecimalFormat("#,##0.000").format(multModulo)+" /_ "+new DecimalFormat("#,##0.00").format(multangulo)+"°\n";
+        ret += "em retangular: "+new DecimalFormat("#,##0.000").format(multReal) + sinal + new DecimalFormat("#,##0.000").format(multImaginario)+"i";
+        ret += "\n----------------------------------------";
+        return ret;
+    }
 
-        ConverterPolarParaRetangula nn = new ConverterPolarParaRetangula(nxx2,nn1, nn2);
-        System.out.println("----------------1º número---------------\n"+n.conv());
-        System.out.println("----------------2º número---------------\n"+nn.conv());
-        SomaComplexo s1 = new SomaComplexo(n, nn);
-        return s1;
+    public String dividir(){
+        double  multModulo= modulon1 / modulon2;
+        double multangulo =  sangulo1 - sangulo2;
+        double multReal = multModulo* Math.cos(Math.toRadians(multangulo));
+        double multImaginario = multModulo* Math.sin(Math.toRadians(multangulo));
+        System.out.println(multangulo);
+        if(multImaginario > 0){
+            sinal ="+";
+        }
+        String ret = "\n----------Resultado da Divisão----------\n";
+        ret += "em Polar: "+new DecimalFormat("#,##0.000").format(multModulo)+" /_ "+new DecimalFormat("#,##0.00").format(multangulo)+"°\n";
+        ret += "em retangular: "+new DecimalFormat("#,##0.000").format(multReal) + sinal + new DecimalFormat("#,##0.000").format(multImaginario)+"i";
+        ret += "\n----------------------------------------";
+        return ret;
     }
 }

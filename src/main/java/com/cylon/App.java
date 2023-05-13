@@ -14,22 +14,22 @@ public class App
         String m = menu.next();
         int mm = Integer.parseInt(m);
         if(mm == 1){
-            Converter s = new Converter();
+            EntradaConversor s = new EntradaConversor();
             System.out.println("-------------Resultado-------------\n"+s.converter()+"-----------------------------------");
         }else if(mm == 2){
-            Calculadora a1 = new Calculadora();
+            EntradaCalculadora a1 = new EntradaCalculadora();
             System.out.println(a1.Calculador().somar());
         }
         else if(mm == 3){
-            Calculadora a1 = new Calculadora();
+            EntradaCalculadora a1 = new EntradaCalculadora();
             System.out.println(a1.Calculador().subtrair());
         }
         else if(mm == 4){
-            Calculadora a1 = new Calculadora();
+            EntradaCalculadora a1 = new EntradaCalculadora();
             System.out.println(a1.Calculador().multiplicar());
         }
         else if(mm == 5){
-            Calculadora a1 = new Calculadora();
+            EntradaCalculadora a1 = new EntradaCalculadora();
             System.out.println(a1.Calculador().dividir());
         }else{
             System.out.println("Digite um numero valido");
