@@ -18,9 +18,9 @@ public class EntradaConversor {
             messagem2 = "Digite a parte imaginária do retangular";
         }
         System.out.println(messagem);
-        int n1 = Integer.parseInt(texto.next());
+        double n1 = Double.parseDouble( texto.next().replaceAll(",", ".") );
         System.out.println(messagem2);
-        int n2 = Integer.parseInt(texto.next());
+        double n2 = Double.parseDouble( texto.next().replaceAll(",",".") );
         NumeroComplexo n = new NumeroComplexo(nxx,n1, n2);
         String nn = n.conv();
         return nn;

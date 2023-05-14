@@ -18,9 +18,9 @@ public class EntradaCalculadora {
             messagem2 = "Digite a parte imaginária";
         }
         System.out.println(messagem);
-        int n1 = Integer.parseInt(texto.next());
+        double n1 = Double.parseDouble(texto.next().replaceAll(",", "."));
         System.out.println(messagem2);
-        int n2 = Integer.parseInt(texto.next());
+        double n2 = Double.parseDouble(texto.next().replaceAll(",", "."));
         NumeroComplexo n = new NumeroComplexo(nxx,n1, n2);
         System.out.println("------Formar do 2º número complexo------\nDigite:");
         System.out.println("1 - para número em polar");
@@ -35,9 +35,9 @@ public class EntradaCalculadora {
             messagem2 = "Digite a parte imaginária";
         }
         System.out.println(messagem);
-        int nn1 = Integer.parseInt(texto.next());
+        double nn1 = Double.parseDouble(texto.next().replaceAll(",", "."));
         System.out.println(messagem2);
-        int nn2 = Integer.parseInt(texto.next());
+        double nn2 = Double.parseDouble(texto.next().replaceAll(",", "."));
 
         NumeroComplexo nn = new NumeroComplexo(nxx2,nn1, nn2);
         System.out.println("----------------1º número---------------\n"+n.conv());

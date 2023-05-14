@@ -14,9 +14,12 @@ public class NumeroComplexo {
         this.angulo = angulo;
         this.nu = nu;
     }
-    
-    public int getNu() {
+    public double getNu() {
         return nu;
+    }
+
+    public double getModulo() {
+        return modulo;
     }
 
     public void setNu(int nu) {
@@ -92,4 +95,8 @@ public class NumeroComplexo {
         resultado +="Retangular: "+ new DecimalFormat("#,##0.00").format(real)+" " + sinal + new DecimalFormat("#,##0.00").format(imaginario) + "i\n";
         return resultado;
     }
+
+
+
+   
 }
