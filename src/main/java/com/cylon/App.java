@@ -15,38 +15,21 @@ public class App
             String m = menu.next();
             int mm = Integer.parseInt(m);
             VoltaSair volt = new VoltaSair();
+            EntradaDados a1 = new EntradaDados();
             if(mm == 1){
-                EntradaConversor s = new EntradaConversor();
-                System.out.println("__________________________________________________\n            Resultado da conversão:\n\n"+s.converter());
-                rep = volt.voltarSair();
+                System.out.println("__________________________________________________\n            Resultado da conversão:\n\n"+a1.converter());
             }else if(mm == 2){
-                EntradaCalculadora a1 = new EntradaCalculadora();
                 System.out.println(a1.Calculador().somar());
-                rep = volt.voltarSair();
             }
-            else if(mm == 3){
-                EntradaCalculadora a1 = new EntradaCalculadora();
-                System.out.println(a1.Calculador().subtrair());
-                rep = volt.voltarSair();
-            }
-            else if(mm == 4){
-                EntradaCalculadora a1 = new EntradaCalculadora();
-                System.out.println(a1.Calculador().multiplicar());
-                rep = volt.voltarSair();
-            }
-            else if(mm == 5){
-                EntradaCalculadora a1 = new EntradaCalculadora();
-                System.out.println(a1.Calculador().dividir());
-                rep = volt.voltarSair();
-            }else if(mm == 6){
-                EntradaPotencia a1 = new EntradaPotencia();
-                System.out.println(a1.Potencia().potenciacao());
-                rep = volt.voltarSair();
-            }
+            else if(mm == 3) System.out.println(a1.Calculador().subtrair());
+            else if(mm == 4) System.out.println(a1.Calculador().multiplicar());
+            else if(mm == 5) System.out.println(a1.Calculador().dividir());
+            else if(mm == 6) System.out.println(a1.Potencia().potenciacao());
             else{
                 System.out.println("Digite um numero valido");
                 rep = 0;
-            }       
+            }   
+            rep = volt.voltarSair();    
         }
     }
 }

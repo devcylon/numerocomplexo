@@ -62,10 +62,11 @@ public class Calculadora{
         }
         modulo = Math.sqrt(Math.pow(somaR, 2)+Math.pow(somaI, 2));
         angulo = Math.toDegrees(Math.acos(somaR/modulo));
-        String ret = "-----------Resuldato da adição-----------\n";
+        String ret = "            Resuldato da adição\n";
+        ret += "__________________________________________________\n";
         ret += "Resultado em Polar: "+new DecimalFormat("#,##0.000").format(modulo)+" /_ "+new DecimalFormat("#,##0.00").format(angulo)+"°\n";
         ret +="Resultado em retangular: " + new DecimalFormat("#,##0.000").format(somaR) + sinal + new DecimalFormat("#,##0.000").format(somaI)+"i";
-        ret += "\n----------------------------------------";
+        ret += "\n__________________________________________________";
         return ret;
     }
     public String subtrair(){
@@ -76,10 +77,11 @@ public class Calculadora{
         }
         modulo = Math.sqrt(Math.pow(somaR, 2)+Math.pow(somaI, 2));
         angulo = Math.toDegrees(Math.acos(somaR/modulo));
-        String ret = "\n----------Resultado da subtração--------\n";
-        ret += "em Polar: "+new DecimalFormat("#,##0.000").format(modulo)+" /_ "+new DecimalFormat("#,##0.00").format(angulo)+"°\n";
-        ret += "em retangular: "+new DecimalFormat("#,##0.000").format(somaR) + sinal + new DecimalFormat("#,##0.000").format(somaI)+"i";
-        ret += "\n----------------------------------------";
+        String ret = "            Resuldato da subtração\n";
+        ret += "__________________________________________________\n";
+        ret += "Resultado em Polar: "+new DecimalFormat("#,##0.000").format(modulo)+" /_ "+new DecimalFormat("#,##0.00").format(angulo)+"°\n";
+        ret +="Resultado em retangular: " + new DecimalFormat("#,##0.000").format(somaR) + sinal + new DecimalFormat("#,##0.000").format(somaI)+"i";
+        ret += "\n__________________________________________________";
         return ret;
     }
     public String multiplicar(){
@@ -91,10 +93,11 @@ public class Calculadora{
         if(multImaginario > 0){
             sinal ="+";
         }
-        String ret = "\n----------Resultado da multiplicação--------\n";
+        String ret = "\n               Resultado da multiplicação\n";
+        ret += "__________________________________________________\n";
         ret += "em Polar: "+new DecimalFormat("#,##0.000").format(multModulo)+" /_ "+new DecimalFormat("#,##0.00").format(multangulo)+"°\n";
         ret += "em retangular: "+new DecimalFormat("#,##0.000").format(multReal) + sinal + new DecimalFormat("#,##0.000").format(multImaginario)+"i";
-        ret += "\n----------------------------------------";
+        ret += "\n__________________________________________________";
         return ret;
     }
 
@@ -107,10 +110,11 @@ public class Calculadora{
         if(multImaginario > 0){
             sinal ="+";
         }
-        String ret = "\n----------Resultado da Divisão----------\n";
+        String ret = "\n           Resultado da Divisão";
+        ret += "\n__________________________________________________\n";
         ret += "em Polar: "+new DecimalFormat("#,##0.000").format(multModulo)+" /_ "+new DecimalFormat("#,##0.00").format(multangulo)+"°\n";
         ret += "em retangular: "+new DecimalFormat("#,##0.000").format(multReal) + sinal + new DecimalFormat("#,##0.000").format(multImaginario)+"i";
-        ret += "\n----------------------------------------";
+        ret += "\n__________________________________________________";
         return ret;
     }
     public String potenciacao(){
