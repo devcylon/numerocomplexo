@@ -13,6 +13,7 @@ public class NumeroComplexo {
         this.numero =numero;
         this.angulo = angulo;
         this.nu = nu;
+     
     }
     public double getNu() {
         return nu;
@@ -92,7 +93,7 @@ public class NumeroComplexo {
             sinal = "+";
         }
         String resultado = "Polar:      "+new DecimalFormat("#,##0.00").format(modulo)+ " /_ "+new DecimalFormat("#,##0.00").format(angulo)+"°\n";
-        resultado +="Retangular: "+ new DecimalFormat("#,##0.00").format(real)+" " + sinal + new DecimalFormat("#,##0.00").format(imaginario) + "i\n";
+        resultado +="Retangular: "+ new DecimalFormat("#,##0.00").format(real)+" " + sinal + new DecimalFormat("#,##0.00").format(imaginario) + "i";
         return resultado;
     }
 

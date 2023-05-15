@@ -3,9 +3,10 @@ import java.util.Scanner;
 public class EntradaConversor {
     public String converter(){
         Scanner texto = new Scanner(System.in);
-        System.out.println("-----------------------------------\nConversor de número complexo\n-----------------------------------\n           Digite:");
+        System.out.println("           Conversor de número complexo\n__________________________________________________\n                   Digite:\n");
         System.out.println("1 - Converte de polar para retangular");
         System.out.println("2 - Converter retangular para polar");
+        System.out.println("__________________________________________________");
         String nx = texto.next();
         int nxx = Integer.parseInt(nx);
         String messagem;
